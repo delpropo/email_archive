@@ -69,7 +69,10 @@ flowchart TD
 
 ```
 
+Example extracted email from a .msg file
 
+![Pre-extracted Email](docs/images/preextracted_email.png)
+![Pre-extracted Email](docs/images/extracted_email.png)
 
 ## Searchable Archive
 
