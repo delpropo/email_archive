@@ -21,9 +21,10 @@ flowchart TD
     D1 --> |No| C
     D1 --> |No| M1
 
-    classDef step fill:#0000cd,stroke:#333,stroke-width:4px;
 
-    class A,B,C,D,E,M1,D1 step;
+
+
+
 ```
 `
 
@@ -39,9 +40,7 @@ flowchart TD
     F --> E[End]
     D --> E[End]
 
-    classDef step fill:#00f,stroke:#333,stroke-width:4px;
 
-    class A,B,C,D,E,F step;
 ```
 
 
@@ -54,9 +53,7 @@ flowchart TD
     C --> D[Verify Transfer]
     D --> E[End]
 
-    classDef step fill:#00f,stroke:#333,stroke-width:4px;
 
-    class A,B,C,D,E step;
 ```
 
 
@@ -69,9 +66,7 @@ flowchart TD
 
     C --> D[End]
 
-    classDef step fill:#00f,stroke:#333,stroke-width:4px;
 
-    class A,B,C,D step;
 ```
 
 
