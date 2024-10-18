@@ -10,13 +10,11 @@ dependencies:
   - typer
   - loguru
   - tqdm
-  - ipython
-  - jupyterlab
-  - matplotlib
   - notebook
   - numpy
   - pandas
   - scikit-learn
+  - msg-extractor
   - pip:
     - python-dotenv
     - mkdocs
