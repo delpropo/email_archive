@@ -4,10 +4,86 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
+
+
+## Junk Mail Cleanup
+
 ```mermaid
 flowchart TD
-    raw_msgs[Raw Messages] -->|Extract| extracted[Extracted Messages] -->|Archive| archived[Archived Messages]
+    A[Start] --> B[Cleanup Old Junk Mail]
+    B --> C[HITS identifies Junk Mail Addresses]
+    C --> D[Apply to Email Sweep List in Outlook]
+    D --> E[End of Cleanup]
+    B --> |Owner Task| M1[Identify old junk emails]
+    M1 --> D[Apply to Email Sweep List in Outlook]
+    D --> |Check| D1{Sweep List Up-to-Date?}
+    D1 --> |Yes| E
+    D1 --> |No| C
+    D1 --> |No| M1
+
+    classDef step fill:#0000cd,stroke:#333,stroke-width:4px;
+
+    class A,B,C,D,E,M1,D1 step;
 ```
+`
+
+
+## Organization for Email Archiving
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Export All Email Addresses]
+    B --> C[Owner Identifies Important Addresses]
+    C --> D[Create Archive Folders]
+    D --> F[User Manually Transfers to Archive Folders]
+    F --> E[End]
+    D --> E[End]
+
+    classDef step fill:#00f,stroke:#333,stroke-width:4px;
+
+    class A,B,C,D,E,F step;
+```
+
+
+## Email Message Transfer
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Identify Archived Email Folders]
+    B --> C[Transfer to OneDrive]
+    C --> D[Verify Transfer]
+    D --> E[End]
+
+    classDef step fill:#00f,stroke:#333,stroke-width:4px;
+
+    class A,B,C,D,E step;
+```
+
+
+
+## Email Message Extraction
+```mermaid
+flowchart TD
+    A[Start] --> B[Run Email Extractor Program]
+    B --> C[Extract Emails and Attachments to Specified Directory]
+
+    C --> D[End]
+
+    classDef step fill:#00f,stroke:#333,stroke-width:4px;
+
+    class A,B,C,D step;
+```
+
+
+
+## Searchable Archive
+
+Extract information from extracted emails and attachments to create a searchable archive.
+
+
+
+
+
 
 
 ## Running email message extractor
