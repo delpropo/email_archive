@@ -171,6 +171,12 @@ python -m extract_msg example.msg --out data/interim
 3. **Archive based on folders or other criteria**
 
 
+### Additional identified issues
+    - Slow manual transfer of emails to one drive
+    - Exporting automated email addresses.  Possible solution being investigated.
+
+
+
 
 example email archive
 
