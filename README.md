@@ -17,7 +17,7 @@ To run the email message extractor, you can use the [msg-extractor](https://gith
 To extract messages from an example email archive, you can use the following command:
 
 ```bash
-python -m extract_msg example.msg --output-dir /data/interim
+python -m extract_msg example.msg --out data/interim
 ```
 
 
