@@ -1,5 +1,11 @@
 # email_archive
 
+## Summary
+
+The purpose of this repo was to develop a plan for archiving important medical emails in anticipation of a new policy that will permanently delete emails older than two years from your account. It outlines possible strategies and tools for identifying, organizing, and preserving critical messages and attachments to ensure valuable information is not lost during the automated deletion process.
+
+> **Note:** The new email retention policy has already gone into effect as of February 28, 2025. Emails older than two years are now subject to permanent deletion.
+
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
