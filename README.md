@@ -1,5 +1,20 @@
 # email_archive
 
+## Table of Contents
+
+- [Summary](#summary)
+- [Junk Mail Cleanup](#junk-mail-cleanup)
+- [Organization for Email Archiving](#organization-for-email-archiving)
+- [Email Message Transfer](#email-message-transfer)
+- [Email Message Extraction](#email-message-extraction)
+- [Searchable Archive](#searchable-archive)
+- [Running email message extractor](#running-email-message-extractor)
+- [Problem Statement](#problem-statement)
+- [User Impact](#user-impact)
+- [Asks:  Assistance in Cleaning, Organizing, and Archiving](#asks--assistance-in-cleaning-organizing-and-archiving)
+- [Setting Up Outlook Processes](#setting-up-outlook-processes)
+- [Project Organization](#project-organization)
+
 ## Summary
 
 The purpose of this repo was to develop a plan for archiving important medical emails in anticipation of a new policy that will permanently delete emails older than two years from your account. It outlines possible strategies and tools for identifying, organizing, and preserving critical messages and attachments to ensure valuable information is not lost during the automated deletion process.
@@ -16,16 +31,33 @@ The purpose of this repo was to develop a plan for archiving important medical e
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[Cleanup Old Junk Mail]
-    B --> C[HITS identifies Junk Mail Addresses]
-    C --> D[Apply to Email Sweep List in Outlook]
-    D --> E[End of Cleanup]
-    B --> |Owner Task| M1[Identify old junk emails]
-    M1 --> D[Apply to Email Sweep List in Outlook]
-    D --> |Check| D1{Sweep List Up-to-Date?}
+    %% Node styles with colors
+    classDef startNode fill:#d4f1f9,stroke:#05728f,stroke-width:2px
+    classDef process fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    classDef decision fill:#fff8e1,stroke:#ffa000,stroke-width:2px
+    classDef endNode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef userTask fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+
+    %% Main flow with descriptive labels
+    A["🚀 Start"] --> B["🧹 Cleanup Old Junk Mail"]
+    B --> C["🔍 HITS identifies Junk Mail Addresses"]
+    C --> D["📋 Apply to Email Sweep List in Outlook"]
+    D --> E["✅ End of Cleanup"]
+    B --> |Owner Task| M1["👤 Identify old junk emails"]
+    M1 --> D
+    D --> |Check| D1{"🔄 Sweep List Up-to-Date?"}
     D1 --> |Yes| E
     D1 --> |No| C
     D1 --> |No| M1
+
+    %% Apply classes to nodes
+    A:::startNode
+    B:::process
+    C:::process
+    D:::process
+    E:::endNode
+    M1:::userTask
+    D1:::decision
 
 
 
@@ -152,7 +184,7 @@ python -m extract_msg example.msg --out data/interim
 | dpss-safety-security@umich.edu | sweep_misc   | Security emails      | Yes       |
 | arcts-support@umich.edu        | sweep_IT     | Cluster compute emails| Yes      |
 | safetytraining@umich.edu       | sweep_safety | Security emails      | Yes       |
-| teamdynamix@umich.edu          | sweep_IT     | IT tickets           | Yes        |
+| teamdynamix@umich.edu          | sweep_IT     | IT tickets           | Yes       |
 
 
 
